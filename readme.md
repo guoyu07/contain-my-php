@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a pretty straight forward project fom running a PHP application in Docker.
+This is a pretty straight forward project for running a PHP development environment in Docker.
 
 ## Requirements
 
