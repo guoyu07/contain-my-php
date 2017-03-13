@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+  web:
+    build:
+      context: ./containers/
+      dockerfile: web.docker
+    volumes:
+      - ./:/var/www
+    ports:
+      - "80:80"
+    links:
+      - app
+  app:
+    build:
+      context: ./containers/
+      dockerfile: app.docker
+    volumes:
+      - ./:/var/www
+    ports:
+      - "9000"
+    links:
+      - blackfire
+      - db
+    environment:
+      XDEBUG_HOST: ${XDEBUG_HOST}
+  blackfire:
+    image: blackfire/blackfire
+    environment:
+      - BLACKFIRE_SERVER_ID
+      - BLACKFIRE_SERVER_TOKEN
+      - BLACKFIRE_LOG_LEVEL=4
+  db:
+    image: mariadb:10.1
+    environment:
+      MYSQL_DATABASE: webapp
+      MYSQL_USER: webapp
+      MYSQL_PASSWORD: s3cr3t
+      MYSQL_ROOT_PASSWORD: s3cr3t
+    ports:
+      - "3306"

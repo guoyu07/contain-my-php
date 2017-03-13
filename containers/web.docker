@@ -1,0 +1,5 @@
+FROM nginx:1.11-alpine
+MAINTAINER Michael Bunch <michael@caeynastudios.com>
+
+ADD ./config/nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /var/www
