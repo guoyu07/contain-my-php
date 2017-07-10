@@ -66,3 +66,13 @@ The official MySQL Docker image. No modifications have been made to this contain
 are already configured to run the image, but you may wish to make changes.
 
 Version: 5.7.x
+
+### Redis Server
+
+The official Redis Docker image. No modifications have been made to this container. Environment variables 
+are already configured to run the image, but you may wish to make changes.
+
+### Selenium Standalone Chrome
+
+The official Redis Docker image. No modifications have been made to this container. Environment variables 
+are already configured to run the image, but you may wish to make changes.

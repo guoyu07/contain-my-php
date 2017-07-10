@@ -31,11 +31,19 @@ services:
       - BLACKFIRE_SERVER_TOKEN
       - BLACKFIRE_LOG_LEVEL=4
   db:
-    image: mariadb:10.1
+    image: mysql:5.7
     environment:
       MYSQL_DATABASE: webapp
       MYSQL_USER: webapp
-      MYSQL_PASSWORD: s3cr3t
-      MYSQL_ROOT_PASSWORD: s3cr3t
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
     ports:
-      - "3306"
+      - "3306:3306"
+  redis:
+    image: redis:3.2-alpine
+    ports:
+      - "6379:6379"
+  selenium:
+    image: selenium/standalone-chrome:3.4.0-einsteinium
+    ports:
+      - "4444:4444"
