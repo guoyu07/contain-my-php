@@ -74,5 +74,5 @@ are already configured to run the image, but you may wish to make changes.
 
 ### Selenium Standalone Chrome
 
-The official Redis Docker image. No modifications have been made to this container. Environment variables 
+The official Selenium Docker image. No modifications have been made to this container. Environment variables 
 are already configured to run the image, but you may wish to make changes.
